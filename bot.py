@@ -83,7 +83,7 @@ def search_phone_number(update: Update, context: CallbackContext) -> None:
                 message = (
                     f"📊 **نتایج جستجو:**\n"
                     f"📞 **شماره:** `{phone_number}`\n"
-                    f"👤t Update
+                    f"👤t Update"
 f{name}\n"
                     f"🏙gram impor{city}\n"
                     f"🌍gram import{country}\n"
@@ -144,3 +144,4 @@ add_handler(CommandHandler("start", start))
 
 ifs://api.tr== '__main__':
     main()
+
