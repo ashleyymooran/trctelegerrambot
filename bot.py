@@ -110,7 +110,7 @@ f{name}\n"
 
 # هندلر خطا
 def error_handler(update: Update, context: CallbackContext) -> None:
-    logger.error(f"Update {update} caused error {context.error}")
+    logger.error("Update %s caused error %s", update, context.error)
 
 def main():
     # ایجاد updater و dispatcher
