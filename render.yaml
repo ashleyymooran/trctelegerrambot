@@ -1,18 +1,17 @@
 # render.yaml
 services:
   - type: web
-    name: telegram-truecaller-bot
+    name: trctelegrrambot
     env: python
-    runtime: python-3.12   # <--- این خط مهمه!
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn src.bot:app
+    pythonVersion: "3.12"          # این خط کلیدیه!
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn src.bot:app"
+    plan: free
+
     envVars:
       - key: BOT_TOKEN
         sync: false
       - key: TRUECALLER_API_KEY
         sync: false
       - key: RENDER_APP_NAME
-        fromService:
-          name: telegram-truecaller-bot
-          type: web
-          property: host
+        value: trctelegrrambot
