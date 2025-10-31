@@ -23,8 +23,9 @@ def home():
     return "ربات Truecaller در حال اجراست! /start را در تلگرام بزنید."
 
 
-@app.route("/callback", methods=["POST"])
-def callback():
+@app.route(f"/{BOT_TOKEN}", methods=["POST"])
+def webhook():
+    return Response("ol", status=200)
     data = request.get_json()
     logger.info(f"Callback received: {data}")
     return jsonify({"status": "success"})
@@ -168,7 +169,7 @@ def main() -> None:
     application.run_webhook(
         listen="0.0.0.0",
         port=PORT,
-        url_path="webhook",
+        url_path=BOT_TOKEN,
         webhook_url=webhook_url,
     )
 
@@ -190,5 +191,6 @@ if    __name__ == "__main__":
         from werkzeug.serving import run_simple
 
         run_simple("0.0.0.0", int(os.getenv("PORT", 5000)), app)
+
 
 
