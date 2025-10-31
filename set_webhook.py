@@ -7,7 +7,7 @@ BOT_TOKEN = "8461212300:AAFmTxio3YON-C2FVOrnERS2cQErYO09Rms"
 APP_NAME = "trctelegrrambot"
 
 def set_webhook():
-    webhook_url = f"https://{APP_NAME}.onrender.com/{BOT_TOKEN}"
+    webhook_url = f"https://{APP_NAME}.onrender.com/webhook"
     
     response = requests.get(
         f"https://api.telegram.org/bot{BOT_TOKEN}/setWebhook",
@@ -29,3 +29,4 @@ if __name__ == '__main__':
     set_webhook()
 
     get_webhook_info()
+
