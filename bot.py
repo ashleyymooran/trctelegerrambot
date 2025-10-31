@@ -163,12 +163,12 @@ def main() -> None:
     # ---- تنظیمات webhook برای Render ----
     PORT = int(os.getenv("PORT", 5000))
     APP_NAME = os.getenv("RENDER_APP_NAME", "my-updownsug-umazat")  # در Render تنظیم کنید
-    webhook_url = f"https://{APP_NAME}.onrender.com/{BOT_TOKEN}"
+    webhook_url = f"https://{APP_NAME}.onrender.com/webhook"
 
     application.run_webhook(
         listen="0.0.0.0",
         port=PORT,
-        url_path=BOT_TOKEN,
+        url_path="webhook",
         webhook_url=webhook_url,
     )
 
@@ -190,4 +190,5 @@ if    __name__ == "__main__":
         from werkzeug.serving import run_simple
 
         run_simple("0.0.0.0", int(os.getenv("PORT", 5000)), app)
+
 
