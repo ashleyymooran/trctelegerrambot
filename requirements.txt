@@ -1,5 +1,6 @@
-python-telegram-bot[webhooks]>=20.0
-requests==2.25.1
-Flask==2.1.0
+Flask==2.3.3
+Werkzeug=2.3.8
+python-telegram-bot[webhooks]==20.8
+requests
+gunicorn
 
-gunicorn==20.1.0
