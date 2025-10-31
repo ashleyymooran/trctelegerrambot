@@ -1,16 +1,16 @@
 import requests
 
 # توکن ربات شما
-TELEGRAM_TOKEN = "8461212300:AAFmTxio3YON-C2FVOrnERS2cQErYO09Rms"
+BOT_TOKEN = "8461212300:AAFmTxio3YON-C2FVOrnERS2cQErYO09Rms"
 
 # نام اپلیکیشن Render
-APP_NAME = "my-updownsug-umazat"
+APP_NAME = "trctelegrrambot"
 
 def set_webhook():
-    webhook_url = f"https://{APP_NAME}.onrender.com/{TELEGRAM_TOKEN}"
+    webhook_url = f"https://{APP_NAME}.onrender.com/{BOT_TOKEN}"
     
     response = requests.get(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/setWebhook",
+        f"https://api.telegram.org/bot{BOT_TOKEN}/setWebhook",
         params={"url": webhook_url}
     )
     
@@ -19,7 +19,7 @@ def set_webhook():
 
 def get_webhook_info():
     response = requests.get(
-        f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getWebhookInfo"
+        f"https://api.telegram.org/bot{BOT_TOKEN}/getWebhookInfo"
     )
     
     print("🔍 اطلاعات Webhook:")
@@ -27,4 +27,5 @@ def get_webhook_info():
 
 if __name__ == '__main__':
     set_webhook()
+
     get_webhook_info()
